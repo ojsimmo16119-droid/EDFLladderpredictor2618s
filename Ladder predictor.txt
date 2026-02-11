@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>EDFNL U16 2026 Ladder Predictor</title>
+<style>
+body { font-family: Arial, sans-serif; display: flex; margin: 0; }
+#ladder { position: sticky; top: 0; width: 280px; padding: 10px; background: #f7f7f7; border-right: 2px solid #333; height: 100vh; overflow-y: auto; }
+#content { padding: 10px; flex: 1; }
+table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+th, td { border: 1px solid #ccc; padding: 6px; text-align: center; }
+th { background: #e0e0e0; }
+.score { width: 45px; }
+.round { background: #ddd; font-weight: bold; text-align: left; }
+</style>
+</head>
+
+<body>
+
+<div id="ladder">
+<h3>Live Ladder</h3>
+<table id="ladderTable">
+<tr><th>Team</th><th>P</th><th>W</th><th>L</th><th>Pts</th><th>%</th></tr>
+</table>
+</div>
+
+<div id="content">
+<h2>EDFNL U16 – 2026 Fixture & Predictor</h2>
+
+<table id="fixtures">
+
+<tr class="round"><td colspan="4">Round 1</td></tr>
+<tr data-game><td>Buln Buln</td><td><input class="score home"></td><td>Lang Lang</td><td><input class="score away"></td></tr>
+<tr data-game><td>Yarragon</td><td><input class="score home"></td><td>Nilma Darnum</td><td><input class="score away"></td></tr>
+<tr data-game><td>Neerim South</td><td><input class="score home"></td><td>Longwarry</td><td><input class="score away"></td></tr>
+<tr data-game><td>Bunyip</td><td><input class="score home"></td><td>Catani</td><td><input class="score away"></td></tr>
+<tr data-game><td>Ellinbank</td><td><input class="score home"></td><td>Trafalgar</td><td><input class="score away"></td></tr>
+<tr data-game><td>Nyora</td><td><input class="score home"></td><td>Poowong</td><td><input class="score away"></td></tr>
+
+<tr class="round"><td colspan="4">Round 2</td></tr>
+<tr data-game><td>Longwarry</td><td><input class="score home"></td><td>Buln Buln</td><td><input class="score away"></td></tr>
+<tr data-game><td>Poowong</td><td><input class="score home"></td><td>Bunyip</td><td><input class="score away"></td></tr>
+<tr data-game><td>Nilma Darnum</td><td><input class="score home"></td><td>Nyora</td><td><input class="score away"></td></tr>
+<tr data-game><td>Lang Lang</td><td><input class="score home"></td><td>Ellinbank</td><td><input class="score away"></td></tr>
+<tr data-game><td>Trafalgar</td><td><input class="score home"></td><td>Neerim South</td><td><input class="score away"></td></tr>
+<tr data-game><td>Catani</td><td><input class="score home"></td><td>Yarragon</td><td><input class="score away"></td></tr>
+
+<tr class="round"><td colspan="4">Round 3</td></tr>
+<tr data-game><td>Nyora</td><td><input class="score home"></td><td>Yarragon</td><td><input class="score away"></td></tr>
+<tr data-game><td>Bunyip</td><td><input class="score home"></td><td>Nilma Darnum</td><td><input class="score away"></td></tr>
+<tr data-game><td>Neerim South</td><td><input class="score home"></td><td>Buln Buln</td><td><input class="score away"></td></tr>
+<tr data-game><td>Poowong</td><td><input class="score home"></td><td>Catani</td><td><input class="score away"></td></tr>
+<tr data-game><td>Ellinbank</td><td><input class="score home"></td><td>Longwarry</td><td><input class="score away"></td></tr>
+<tr data-game><td>Trafalgar</td><td><input class="score home"></td><td>Lang Lang</td><td><input class="score away"></td></tr>
+
+<tr class="round"><td colspan="4">Round 4</td></tr>
+<tr data-game><td>Nilma Darnum</td><td><input class="score home"></td><td>Catani</td><td><input class="score away"></td></tr>
+<tr data-game><td>Nyora</td><td><input class="score home"></td><td>Bunyip</td><td><input class="score away"></td></tr>
+<tr data-game><td>Yarragon</td><td><input class="score home"></td><td>Poowong</td><td><input class="score away"></td></tr>
+<tr data-game><td>Buln Buln</td><td><input class="score home"></td><td>Ellinbank</td><td><input class="score away"></td></tr>
+<tr data-game><td>Lang Lang</td><td><input class="score home"></td><td>Neerim South</td><td><input class="score away"></td></tr>
+<tr data-game><td>Longwarry</td><td><input class="score home"></td><td>Trafalgar</td><td><input class="score away"></td></tr>
+
+<tr class="round"><td colspan="4">Round 5</td></tr>
+<tr data-game><td>Trafalgar</td><td><input class="score home"></td><td>Buln Buln</td><td><input class="score away"></td></tr>
+<tr data-game><td>Ellinbank</td><td><input class="score home"></td><td>Neerim South</td><td><input class="score away"></td></tr>
+<tr data-game><td>Poowong</td><td><input class="score home"></td><td>Nilma Darnum</td><td><input class="score away"></td></tr>
+<tr data-game><td>Catani</td><td><input class="score home"></td><td>Nyora</td><td><input class="score away"></td></tr>
+<tr data-game><td>Longwarry</td><td><input class="score home"></td><td>Lang Lang</td><td><input class="score away"></td></tr>
+<tr data-game><td>Bunyip</td><td><input class="score home"></td><td>Yarragon</td><td><input class="score away"></td></tr>
+
+<tr class="round"><td colspan="4">Round 6</td></tr>
+<tr data-game><td>Buln Buln</td><td><input class="score home"></td><td>Nyora</td><td><input class="score away"></td></tr>
+<tr data-game><td>Neerim South</td><td><input class="score home"></td><td>Nilma Darnum</td><td><input class="score away"></td></tr>
+<tr data-game><td>Trafalgar</td><td><input class="score home"></td><td>Catani</td><td><input class="score away"></td></tr>
+<tr data-game><td>Lang Lang</td><td><input class="score home"></td><td>Poowong</td><td><input class="score away"></td></tr>
+<tr data-game><td>Ellinbank</td><td><input class="score home"></td><td>Bunyip</td><td><input class="score away"></td></tr>
+<tr data-game><td>Yarragon</td><td><input class="score home"></td><td>Longwarry</td><td><input class="score away"></td></tr>
+
+<tr class="round"><td colspan="4">Round 7</td></tr>
+<tr data-game><td>Yarragon</td><td><input class="score home"></td><td>Neerim South</td><td><input class="score away"></td></tr>
+<tr data-game><td>Nyora</td><td><input class="score home"></td><td>Lang Lang</td><td><input class="score away"></td></tr>
+<tr data-game><td>Catani</td><td><input class="score home"></td><td>Ellinbank</td><td><input class="score away"></td></tr>
+<tr data-game><td>Poowong</td><td><input class="score home"></td><td>Buln Buln</td><td><input class="score away"></td></tr>
+<tr data-game><td>Bunyip</td><td><input class="score home"></td><td>Trafalgar</td><td><input class="score away"></td></tr>
+<tr data-game><td>Nilma Darnum</td><td><input class="score home"></td><td>Longwarry</td><td><input class="score away"></td></tr>
+
+<tr class="round"><td colspan="4">Round 8</td></tr>
+<tr data-game><td>Lang Lang</td><td><input class="score home"></td><td>Bunyip</td><td><input class="score away"></td></tr>
+<tr data-game><td>Trafalgar</td><td><input class="score home"></td><td>Yarragon</td><td><input class="score away"></td></tr>
+<tr data-game><td>Longwarry</td><td><input class="score home"></td><td>Catani</td><td><input class="score away"></td></tr>
+<tr data-game><td>Buln Buln</td><td><input class="score home"></td><td>Nilma Darnum</td><td><input class="score away"></td></tr>
+<tr data-game><td>Neerim South</td><td><input class="score home"></td><td>Nyora</td><td><input class="score away"></td></tr>
+<tr data-game><td>Ellinbank</td><td><input class="score home"></td><td>Poowong</td><td><input class="score away"></td></tr>
+
+<tr class="round"><td colspan="4">Round 9</td></tr>
+<tr data-game><td>Bunyip</td><td><input class="score home"></td><td>Longwarry</td><td><input class="score away"></td></tr>
+<tr data-game><td>Nyora</td><td><input class="score home"></td><td>Ellinbank</td><td><input class="score away"></td></tr>
+<tr data-game><td>Catani</td><td><input class="score home"></td><td>Neerim South</td><td><input class="score away"></td></tr>
+<tr data-game><td>Yarragon</td><td><input class="score home"></td><td>Buln Buln</td><td><input class="score away"></td></tr>
+<tr data-game><td>Poowong</td><td><input class="score home"></td><td>Trafalgar</td><td><input class="score away"></td></tr>
+<tr data-game><td>Nilma Darnum</td><td><input class="score home"></td><td>Lang Lang</td><td><input class="score away"></td></tr>
+
+<tr class="round"><td colspan="4">Round 10</td></tr>
+<tr data-game><td>Neerim South</td><td><input class="score home"></td><td>Poowong</td><td><input class="score away"></td></tr>
+<tr data-game><td>Ellinbank</td><td><input class="score home"></td><td>Yarragon</td><td><input class="score away"></td></tr>
+<tr data-game><td>Buln Buln</td><td><input class="score home"></td><td>Bunyip</td><td><input class="score away"></td></tr>
+<tr data-game><td>Trafalgar</td><td><input class="score home"></td><td>Nilma Darnum</td><td><input class="score away"></td></tr>
+<tr data-game><td>Longwarry</td><td><input class="score home"></td><td>Nyora</td><td><input class="score away"></td></tr>
+<tr data-game><td>Lang Lang</td><td><input class="score home"></td><td>Catani</td><td><input class="score away"></td></tr>
+
+<tr class="round"><td colspan="4">Round 11</td></tr>
+<tr data-game><td>Nilma Darnum</td><td><input class="score home"></td><td>Ellinbank</td><td><input class="score away"></td></tr>
+<tr data-game><td>Yarragon</td><td><input class="score home"></td><td>Lang Lang</td><td><input class="score away"></td></tr>
+<tr data-game><td>Catani</td><td><input class="score home"></td><td>Buln Buln</td><td><input class="score away"></td></tr>
+<tr data-game><td>Poowong</td><td><input class="score home"></td><td>Longwarry</td><td><input class="score away"></td></tr>
+<tr data-game><td>Nyora</td><td><input class="score home"></td><td>Trafalgar</td><td><input class="score away"></td></tr>
+<tr data-game><td>Bunyip</td><td><input class="score home"></td><td>Neerim South</td><td><input class="score away"></td></tr>
+
+<tr class="round"><td colspan="4">Round 12</td></tr>
+<tr data-game><td>Neerim South</td><td><input class="score home"></td><td>Lang Lang</td><td><input class="score away"></td></tr>
+<tr data-game><td>Ellinbank</td><td><input class="score home"></td><td>Buln Buln</td><td><input class="score away"></td></tr>
+<tr data-game><td>Bunyip</td><td><input class="score home"></td><td>Nyora</td><td><input class="score away"></td></tr>
+<tr data-game><td>Trafalgar</td><td><input class="score home"></td><td>Longwarry</td><td><input class="score away"></td></tr>
+<tr data-game><td>Catani</td><td><input class="score home"></td><td>Nilma Darnum</td><td><input class="score away"></td></tr>
+<tr data-game><td>Poowong</td><td><input class="score home"></td><td>Yarragon</td><td><input class="score away"></td></tr>
+
+<tr class="round"><td colspan="4">Round 13</td></tr>
+<tr data-game><td>Lang Lang</td><td><input class="score home"></td><td>Longwarry</td><td><input class="score away"></td></tr>
+<tr data-game><td>Nyora</td><td><input class="score home"></td><td>Catani</td><td><input class="score away"></td></tr>
+<tr data-game><td>Neerim South</td><td><input class="score home"></td><td>Ellinbank</td><td><input class="score away"></td></tr>
+<tr data-game><td>Yarragon</td><td><input class="score home"></td><td>Bunyip</td><td><input class="score away"></td></tr>
+<tr data-game><td>Nilma Darnum</td><td><input class="score home"></td><td>Poowong</td><td><input class="score away"></td></tr>
+<tr data-game><td>Buln Buln</td><td><input class="score home"></td><td>Trafalgar</td><td><input class="score away"></td></tr>
+
+<tr class="round"><td colspan="4">Round 14</td></tr>
+<tr data-game><td>Nyora</td><td><input class="score home"></td><td>Buln Buln</td><td><input class="score away"></td></tr>
+<tr data-game><td>Poowong</td><td><input class="score home"></td><td>Lang Lang</td><td><input class="score away"></td></tr>
+<tr data-game><td>Nilma Darnum</td><td><input class="score home"></td><td>Neerim South</td><td><input class="score away"></td></tr>
+<tr data-game><td>Catani</td><td><input class="score home"></td><td>Trafalgar</td><td><input class="score away"></td></tr>
+<tr data-game><td>Longwarry</td><td><input class="score home"></td><td>Yarragon</td><td><input class="score away"></td></tr>
+<tr data-game><td>Bunyip</td><td><input class="score home"></td><td>Ellinbank</td><td><input class="score away"></td></tr>
+
+<tr class="round"><td colspan="4">Round 15</td></tr>
+<tr data-game><td>Ellinbank</td><td><input class="score home"></td><td>Catani</td><td><input class="score away"></td></tr>
+<tr data-game><td>Trafalgar</td><td><input class="score home"></td><td>Bunyip</td><td><input class="score away"></td></tr>
+<tr data-game><td>Lang Lang</td><td><input class="score home"></td><td>Nyora</td><td><input class="score away"></td></tr>
+<tr data-game><td>Neerim South</td><td><input class="score home"></td><td>Yarragon</td><td><input class="score away"></td></tr>
+<tr data-game><td>Longwarry</td><td><input class="score home"></td><td>Nilma Darnum</td><td><input class="score away"></td></tr>
+<tr data-game><td>Buln Buln</td><td><input class="score home"></td><td>Poowong</td><td><input class="score away"></td></tr>
+
+<tr class="round"><td colspan="4">Round 16</td></tr>
+<tr data-game><td>Bunyip</td><td><input class="score home"></td><td>Poowong</td><td><input class="score away"></td></tr>
+<tr data-game><td>Buln Buln</td><td><input class="score home"></td><td>Longwarry</td><td><input class="score away"></td></tr>
+<tr data-game><td>Yarragon</td><td><input class="score home"></td><td>Catani</td><td><input class="score away"></td></tr>
+<tr data-game><td>Ellinbank</td><td><input class="score home"></td><td>Lang Lang</td><td><input class="score away"></td></tr>
+<tr data-game><td>Nyora</td><td><input class="score home"></td><td>Nilma Darnum</td><td><input class="score away"></td></tr>
+<tr data-game><td>Neerim South</td><td><input class="score home"></td><td>Trafalgar</td><td><input class="score away"></td></tr>
+
+<tr class="round"><td colspan="4">Round 17</td></tr>
+<tr data-game><td>Catani</td><td><input class="score home"></td><td>Bunyip</td><td><input class="score away"></td></tr>
+<tr data-game><td>Nilma Darnum</td><td><input class="score home"></td><td>Yarragon</td><td><input class="score away"></td></tr>
+<tr data-game><td>Lang Lang</td><td><input class="score home"></td><td>Buln Buln</td><td><input class="score away"></td></tr>
+<tr data-game><td>Trafalgar</td><td><input class="score home"></td><td>Ellinbank</td><td><input class="score away"></td></tr>
+<tr data-game><td>Poowong</td><td><input class="score home"></td><td>Nyora</td><td><input class="score away"></td></tr>
+<tr data-game><td>Longwarry</td><td><input class="score home"></td><td>Neerim South</td><td><input class="score away"></td></tr>
+
+<tr class="round"><td colspan="4">Round 18</td></tr>
+<tr data-game><td>Longwarry</td><td><input class="score home"></td><td>Ellinbank</td><td><input class="score away"></td></tr>
+<tr data-game><td>Lang Lang</td><td><input class="score home"></td><td>Trafalgar</td><td><input class="score away"></td></tr>
+<tr data-game><td>Nilma Darnum</td><td><input class="score home"></td><td>Bunyip</td><td><input class="score away"></td></tr>
+<tr data-game><td>Buln Buln</td><td><input class="score home"></td><td>Neerim South</td><td><input class="score away"></td></tr>
+<tr data-game><td>Catani</td><td><input class="score home"></td><td>Poowong</td><td><input class="score away"></td></tr>
+<tr data-game><td>Yarragon</td><td><input class="score home"></td><td>Nyora</td><td><input class="score away"></td></tr>
+
+</table>
+</div>
+
+<script>
+document.addEventListener("input", updateLadder);
+
+function updateLadder() {
+  const games = document.querySelectorAll("[data-game]");
+  const ladder = {};
+
+  games.forEach(g => {
+    const home = g.children[0].innerText;
+    const away = g.children[2].innerText;
+    const hs = parseInt(g.querySelector(".home").value);
+    const as = parseInt(g.querySelector(".away").value);
+
+    if (!ladder[home]) ladder[home] = {p:0,w:0,l:0,f:0,a:0,pts:0};
+    if (!ladder[away]) ladder[away] = {p:0,w:0,l:0,f:0,a:0,pts:0};
+
+    if (isNaN(hs) || isNaN(as)) return;
+
+    ladder[home].p++; ladder[away].p++;
+    ladder[home].f += hs; ladder[home].a += as;
+    ladder[away].f += as; ladder[away].a += hs;
+
+    if (hs > as) { ladder[home].w++; ladder[home].pts += 4; ladder[away].l++; }
+    else if (as > hs) { ladder[away].w++; ladder[away].pts += 4; ladder[home].l++; }
+  });
+
+  const table = document.getElementById("ladderTable");
+  table.innerHTML = "<tr><th>Team</th><th>P</th><th>W</th><th>L</th><th>Pts</th><th>%</th></tr>";
+
+  Object.entries(ladder)
+    .sort((a,b)=>b[1].pts-a[1].pts || ((b[1].f/b[1].a)-(a[1].f/a[1].a)))
+    .forEach(([t,s])=>{
+      const pct = s.a ? ((s.f/s.a)*100).toFixed(1) : "0.0";
+      table.innerHTML += `<tr><td>${t}</td><td>${s.p}</td><td>${s.w}</td><td>${s.l}</td><td>${s.pts}</td><td>${pct}</td></tr>`;
+    });
+}
+</script>
+
+</body>
+</html>
